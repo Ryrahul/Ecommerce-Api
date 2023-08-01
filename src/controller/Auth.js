@@ -1,4 +1,4 @@
-const User = require("../db/models/UserSchema");
+const User = require("../../db/models/UserSchema")
 const createToken = require("../middleware/jwt");
 const signup = async (req, res) => {
   try {

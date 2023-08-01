@@ -1,5 +1,5 @@
-const Cart = require("../db/models/CartSchema");
-const Product = require("../db/models/productsSchema");
+const Cart = require("../../db/models/CartSchema")
+const Product = require('../../db/models/productsSchema')
 
 const addToCart = async (req, res) => {
   const id = req.user._id;

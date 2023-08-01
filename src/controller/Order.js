@@ -1,6 +1,6 @@
-const Cart = require("../db/models/CartSchema");
-const Order = require("../db/models/OrderSchema");
-const User = require("../db/models/UserSchema");
+const Cart = require('../../db/models/CartSchema');
+const Order = require('../../db/models/OrderSchema');
+const User = require('../../db/models/UserSchema');
 
 const addToOrder = async (req, res) => {
   try {

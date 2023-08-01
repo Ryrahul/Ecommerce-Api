@@ -1,5 +1,5 @@
-const Category = require("../db/models/Category.Schema");
-const Product = require("../db/models/productsSchema");
+const Category = require("../../db/models/Category.Schema")
+const Product = require("../../db/models/productsSchema")
 
 
 const category = async (req, res) => {
