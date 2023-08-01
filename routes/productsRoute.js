@@ -12,6 +12,7 @@ const {
 const { signup, login } = require("../controller/Auth");
 const { addToCart, getCart, updateCart } = require("../controller/Cart");
 const auth = require("../middleware/authorization");
+const addToOrder = require("../controller/Order");
 
 router.post("/categories", category);
 router.delete("/dlt/categories/:id", deleteCategory);
@@ -26,5 +27,6 @@ router.post("/login", login);
 router.post("/cart", auth, addToCart);
 router.get("/cart", auth, getCart);
 router.put("/cart", auth, updateCart);
+router.post("/order", addToOrder);
 
 module.exports = router;

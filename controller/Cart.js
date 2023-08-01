@@ -18,7 +18,7 @@ const addToCart = async (req, res) => {
     const existingItem = cart.items.find((item) =>
       item.product.equals(productId)
     );
-    if (existingItem) {
+    if (existingItem) {  
       existingItem.quantity += 1;
     } else {
       cart.items.push({
@@ -46,16 +46,15 @@ const updateCart = async (req, res) => {
   res.json(cart);
 };
 const getCart = async (req, res) => {
-    try{
-  id = req.user._id;
-  const availableCart = await Cart.findOne({ user: id });
-  if(!availableCart){
-    res.status(401).send("Nothing in Cart")
+  try {
+    id = req.user._id;
+    const availableCart = await Cart.findOne({ user: id });
+    if (!availableCart) {
+      res.status(401).send("Nothing in Cart");
+    }
+    res.status(200).send(availableCart);
+  } catch (e) {
+    res.status(401).send(e.message);
   }
-  res.status(200).send(availableCart);
-    }
-    catch(e){
-
-    }
 };
-module.exports = {addToCart,getCart,updateCart};
+module.exports = { addToCart, getCart, updateCart };
