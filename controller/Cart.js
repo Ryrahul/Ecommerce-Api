@@ -3,8 +3,7 @@ const Product = require("../db/models/productsSchema");
 
 const addToCart = async (req, res) => {
   const id = req.user._id;
-  console.log(id);
-  console.log(id);
+
   const { productId, quantity } = req.body;
   try {
     const product = await Product.findById(productId);
@@ -18,7 +17,7 @@ const addToCart = async (req, res) => {
     const existingItem = cart.items.find((item) =>
       item.product.equals(productId)
     );
-    if (existingItem) {  
+    if (existingItem) {
       existingItem.quantity += 1;
     } else {
       cart.items.push({

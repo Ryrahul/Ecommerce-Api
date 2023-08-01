@@ -27,6 +27,6 @@ router.post("/login", login);
 router.post("/cart", auth, addToCart);
 router.get("/cart", auth, getCart);
 router.put("/cart", auth, updateCart);
-router.post("/order", addToOrder);
+router.post("/order",auth, addToOrder);
 
 module.exports = router;
