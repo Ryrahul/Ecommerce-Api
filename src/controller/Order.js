@@ -44,13 +44,14 @@ const addToOrder = async (req, res) => {
       currency: "INR",
     });
     console.log(razorPayorder);
+    
 
     const order = new Order({
       user: _id,
       items: orderItems,
     });
     await order.save();
-    // cart.items = [];
+    cart.items = [];
 
     await cart.save();
     const paymentLink = `localhost${process.env.PORT}:/api/order/checkout/:${razorPayorder.id}`;
